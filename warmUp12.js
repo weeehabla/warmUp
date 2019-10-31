@@ -22,3 +22,42 @@ Technical Details
     -The maximum size of a range will be 100 integers
     -The starting number of a range will be: 0 < n < 100
  */
+
+
+
+
+// this is not the correct solution for this Q 
+//im stuck with how split the numbers in the string to the size of number 10 
+
+ function mysteryRange(inputString,number){
+
+  var array = [] ;
+  var max = 0 ;
+  var min = inputString[0] ;
+  
+
+ 
+    for( var i = 0 ; i < number ; i++){
+
+
+        if (max < inputString[i]){
+
+            max = inputString[i];
+        }
+
+        if (min > inputString[i] ) {
+
+            min = inputString[i];
+        }
+
+
+    }
+    
+    array.push(max);
+    array.push(min);
+
+
+     return array ;
+
+ }
+
