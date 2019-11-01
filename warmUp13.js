@@ -31,3 +31,34 @@
             filter_list([1,'a','b',0,15]) == [1,0,15]
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
+
+
+
+function toCamelCase(str){
+    var y = ""
+
+    for (var i = 0 ; i <str.length ;i++){
+
+        if (str[i]==="-") {
+            var x = str.split("-")
+
+        }
+        
+            if (str[i]==="_") {
+            var x = str.split("_")
+
+        }
+}
+
+y = x[0];
+
+for (i = 1 ; i < x.length ; i++){
+
+    y = y + x[i]
+
+
+}
+
+return y 
+
+}
