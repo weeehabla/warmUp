@@ -32,33 +32,64 @@
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
 
+//Q1
 
+ function solution(str){
+
+    var x = str.split('') , acc = 0 ;
+
+
+    var symbl ={I : 1, V: 5, X : 10, L : 50,C : 100, D : 500, M : 1000};
+
+    for ( var i = 0 ; i < x.length ; i++){
+
+        acc += symbl[x[i]];
+
+    }
+
+    return acc;
+ }
+
+
+
+
+//Q2
 
 function toCamelCase(str){
-    var y = ""
+    
+    var x = str.split("");
 
-    for (var i = 0 ; i <str.length ;i++){
+    for (var i = 0 ; i < x.length ; i++ )
+    {
+        if ( x[i] === "-" || x[i] === "_"){
 
-        if (str[i]==="-") {
-            var x = str.split("-")
-
+            x.splice(i,1);
+            x.splice(i,1,x[i].toUpperCase());
+            
         }
         
-            if (str[i]==="_") {
-            var x = str.split("_")
+    }
+    return x.join("");
+
+
+}
+
+//Q3
+
+function filter_list(array){
+    var x = [];
+    for ( var i = 0 ; i < array.length ; i++){
+        if ( typeof array[i] === "number"){
+
+            x.push(array[i]);
 
         }
+    }
+    return x;
 }
 
-y = x[0];
-
-for (i = 1 ; i < x.length ; i++){
-
-    y = y + x[i]
 
 
-}
 
-return y 
 
-}
+
