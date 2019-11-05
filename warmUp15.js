@@ -5,42 +5,57 @@
 //
 // Note : you can`t use any built-in functions .
 
-
-//============== almots there but need more time to think about it :))
-
 function reverseStr(string){
  
- var str = "";
- var str1 = "";
- var str2 = "";
- var str3 = "";
+var str = "";
+var str1 = "";
+var str2 = "";
 
-    for ( var i = string.length-1 ; i >= 0; i--) {
+//  This to reverse the sring like this "yadot rehtaew eht si woh ereht ih"
 
-        str += string[i] 
+    for ( var i = string.length-1; i >= 0; i--) {
+
+        str += string[i];
+
     }
-     for( var i = 0 ; i < str.length; i++) {
+    
+// This to reverse each word in the string which is end by space " "
 
-          str1 += str[i]
+     for ( var i = 0; i < str.length; i++) {
 
-        if(str[i] === " "){
+        if (str[i] !== " " ) {
 
-             str2 += str1
+            str1 += str[i];
+            
+        }
 
-        if(str2.length === str1.length) {
+        if (str[i] === " " ) { 
+            
+          str2 += reverse(str1)+" ";
+          str1 = "";
+                
+         }
 
-            for ( var i = str1.length-1 ; i >= 0; i--) {
+         if (str[i+1] === undefined) {
 
-                     str3 += str1[i] 
-                }
-
-                console.log(str3)
-        }   
+            str2 += reverse(str1);
+            str1 = "";
+         }
      }
- }
- 
-    return str
+    return str2;
 
 }
 
- 		
+// This function used to reverse each word in the string that was reversed before 
+
+function reverse(string) {
+
+    var str = "";
+
+            for ( var i = string.length-1 ; i >= 0; i--) {
+
+                     str += string[i]; 
+                }
+
+    return str;
+}
