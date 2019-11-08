@@ -30,3 +30,39 @@
 // var calculateTime = function(keyboard, word) {
     
 // };
+
+function oneFingerTime(keyboard,word) {
+
+ var array1 = word.split("");
+ var array2 = keyboard.split("");
+ var count = 0 ;
+ var index = []
+
+    for ( var i = 0 ; i < array1.length ; i++) {
+
+        for ( var j = 0 ; j < array2.length ; j++) {
+
+            if( array1[i] === array2[j]) {
+
+                index.push(j)
+
+            }
+
+        } 
+    }
+
+ return index
+
+}
+
+// function reverse(array) {
+
+//     if (array.length === 1){
+//         return 0 
+//     }
+//     else if (array.length > 1){
+//         return array[0] - reverse(array.length -1 )
+//     }
+
+
+// }
