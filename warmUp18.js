@@ -14,43 +14,27 @@
 // =========== The its not working just want to try the concept only the one one of the prolem 
 // =========== to colect the symbol the count of each one 
 
+
 function countChar(str) {
 
-  var count0 = 0 ;
-  var count1 = 0 ; 
-  var count2 = 0 ; 
-  var count3 = 0 ;
-  var string = '';
-  var array = str.toLowerCase().split("");
+ var array = str.split("");
+ var array1 = [];
 
-  for ( var i = 0 ; i < array.length ; i++) {
+ for (var i = 0 ; i < array.length ; i++ ) {
 
-    if ( array[i] === "h") {
+    var count = 0 ; 
 
-       count0++
-       string += count0
-       array.splice(i,1)
-      
-       
+    for ( var j = 0 ; j <= i ; j++) {
+
+        if ( array[i] === array[j]){
+
+            count++
+
+        }
     }
-    if ( array[i] === "e") {
 
-       count1++
-       string += count1
-       array.splice(i,1)
-    }
-    if ( array[i] === "l") {
+    array1.push(count)
+ }
 
-       count2++
-       string += count2
-       array.splice(i,1)
-    }
-    // if ( array[i] === "o") {
-
-    //    count3++
-    //    string += count3
-    //    array.splice(i,1)
-    // }  
-  }
-  return string
+ return array1.join("")
 }

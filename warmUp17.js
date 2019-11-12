@@ -25,44 +25,44 @@
 // 1 <= word.length <= 10^4
 // word[i] is an English lowercase letter.
 
-// ​
-// ​
-// var calculateTime = function(keyboard, word) {
-    
-// };
 
-function oneFingerTime(keyboard,word) {
+// it took me more time than i expected so to solve it in warmup itme was a littel bit hard =======
 
- var array1 = word.split("");
- var array2 = keyboard.split("");
- var count = 0 ;
- var index = []
+var calculateTime = function(keyboard, word) {    
 
-    for ( var i = 0 ; i < array1.length ; i++) {
+    var array = [];
 
-        for ( var j = 0 ; j < array2.length ; j++) {
+    for ( var i = 0 ; i < word.length ; i ++ ) {
 
-            if( array1[i] === array2[j]) {
+        for ( var j = 0 ; j < keyboard.length ; j++ ) {
 
-                index.push(j)
+            if ( word[i] === keyboard[j]) {
+
+               array.push(j); 
 
             }
-
-        } 
+        }
     }
 
- return index
+   var count = array[0]
+
+    while (array.length !== 0 ){
+
+        if (array[1] === undefined) {
+
+            return count += 0
+        }
+
+        if (array[0] > array[1]) {
+
+            count += array[0] - array[1]
+
+        }else{
+            count += array[1] - array[0]
+        }
+
+        array.splice(0,1)
+        
+    } 
 
 }
-
-// function reverse(array) {
-
-//     if (array.length === 1){
-//         return 0 
-//     }
-//     else if (array.length > 1){
-//         return array[0] - reverse(array.length -1 )
-//     }
-
-
-// }
